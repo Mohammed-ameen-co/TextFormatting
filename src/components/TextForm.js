@@ -68,20 +68,20 @@ export default function TextForm(props) {
     <div className="container" style={{color:props.mode === `dark` ? `white` : `black`}}>
         <h1>{props.heading}</h1>
         <div className="mb-3">
-        <textarea className="form-control" value={text} onChange={handleOnChange} placeholder="Enter text here" id="myBox" rows="8" style={{backgroundColor:props.mode === `dark` ? `gray` : `white`, color:props.mode === `dark` ? `white` : `black`}} ></textarea>
+        <textarea className="form-control" value={text} onChange={handleOnChange} placeholder="Enter text here" id="myBox" rows="8" style={{backgroundColor:props.mode === `dark` ? `#8c8383c4` : `white`, color:props.mode === `dark` ? `white` : `black`}} ></textarea>
         </div>
-        <div className="dropdown">
-            <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{backgroundColor:props.mode === `light` ? `gray` : `white`,color:props.mode === `light` ? `white` : `black`}}>
+        <div className="dropdown" >
+            <button className="btn btn-secondary dropdown-toggle" disabled={text.length === 0} type="button" data-bs-toggle="dropdown" aria-expanded="false"  style={{backgroundColor:props.mode === `light` ? `gray` : `white`,color:props.mode === `light` ? `white` : `black`}}>
             Text Case
             </button>
-            <ul className="dropdown-menu dropdown-menu-dark">
-                <li><button className="btn btn-primary dropdown-item" onClick={handleUpClick}>UPPERCASE</button></li>
-                <li><button className="btn btn-primary dropdown-item" onClick={handleLwClick}>lowercase</button></li>
-                <li><button className="btn btn-primary dropdown-item" onClick={handleTitleClick}>Title Case</button></li>
-                <li><button className="btn btn-primary dropdown-item" onClick={handleStClick}> Sentence case</button></li>
-                <li><button className="btn btn-primary dropdown-item" onClick={handleExtraSpaces}> Remove Extra Spaces</button></li>
-                <li><button className="btn btn-primary dropdown-item" onClick={handleCopy}> Copy</button></li>
-                <li><button className="btn btn-primary dropdown-item" onClick={handleClear}> Clear</button></li>
+            <ul className="dropdown-menu dropdown-menu-dark" >
+                <li><button className="btn btn-primary dropdown-item" disabled={text.length === 0} onClick={handleUpClick}>UPPERCASE</button></li>
+                <li><button className="btn btn-primary dropdown-item" disabled={text.length === 0} onClick={handleLwClick}>lowercase</button></li>
+                <li><button className="btn btn-primary dropdown-item" disabled={text.length === 0} onClick={handleTitleClick}>Title Case</button></li>
+                <li><button className="btn btn-primary dropdown-item" disabled={text.length === 0} onClick={handleStClick}> Sentence case</button></li>
+                <li><button className="btn btn-primary dropdown-item" disabled={text.length === 0} onClick={handleExtraSpaces}> Remove Extra Spaces</button></li>
+                <li><button className="btn btn-primary dropdown-item" disabled={text.length === 0} onClick={handleCopy}> Copy</button></li>
+                <li><button className="btn btn-primary dropdown-item" disabled={text.length === 0} onClick={handleClear}> Clear</button></li>
             </ul>
         </div>
                 {/* <button className="btn btn-primary" onClick={handleUndo}>Undo</button> */}
